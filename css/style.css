@@ -32,3 +32,12 @@
 .carosello .carosello__arrow.arrow-right {
 	right: 20px;
 }
+
+#title , #sub_title{
+	color: white;
+}
+.info{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% ,-50%  );
+}
