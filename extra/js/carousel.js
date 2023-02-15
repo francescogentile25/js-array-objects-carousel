@@ -68,24 +68,74 @@ const leftBtnElement = document.querySelector('.carosello__arrow.arrow-left')
 
 // console.log(rightBtnElement)
 
-rightBtnElement.addEventListener('click', function () {
-	const lastIndex =slideElements.length-1
-	slideElements[indiceSlideAttiva].classList.remove('active')
-	if (indiceSlideAttiva < lastIndex) {
-		indiceSlideAttiva += 1
-	} else {
-		indiceSlideAttiva = 0
-	}
-	slideElements[indiceSlideAttiva].classList.add('active')
-})
+	leftBtnElement.addEventListener('click', goBack)
+	rightBtnElement.addEventListener('click', goForward)
 
-leftBtnElement.addEventListener('click', function () {
-	slideElements[indiceSlideAttiva].classList.remove('active')
-	if (indiceSlideAttiva > 0) {
-		indiceSlideAttiva--
-	} else {
-		indiceSlideAttiva = slideElements.length - 1 //last index
+function goForward(){
+	const lastIndex =slideElements.length-1
+		slideElements[indiceSlideAttiva].classList.remove('active')
+		if (indiceSlideAttiva < lastIndex) {
+			indiceSlideAttiva += 1
+		} else {
+			indiceSlideAttiva = 0
+		}
+		slideElements[indiceSlideAttiva].classList.add('active')
+}
+
+function goBack(){
+		slideElements[indiceSlideAttiva].classList.remove('active')
+		if (indiceSlideAttiva > 0) {
+			indiceSlideAttiva--
+		} else {
+			indiceSlideAttiva = slideElements.length - 1 //last index
+		}
+		console.log(slideElements[indiceSlideAttiva])
+		slideElements[indiceSlideAttiva].classList.add('active')
+}
+
+const btnStart= document.querySelector('.btStart')
+const btnStop = document.querySelector('.btStop')
+const btnRewind = document.querySelector('.btRewind')
+const btnReset = document.querySelector('.btReset')
+console.log(btnStart,btnStop, btnRewind)
+
+let clock= undefined
+console.log(clock)
+btnStart.addEventListener('click', function(){
+	if (clock === undefined){
+		clock= setInterval(goForward, 1000);
+		console.log(clock)
 	}
-	console.log(slideElements[indiceSlideAttiva])
-	slideElements[indiceSlideAttiva].classList.add('active')
-})
+}
+)
+btnStop.addEventListener('click', function(){
+	clearInterval(clock);
+	clock= undefined
+}
+)
+
+btnRewind.addEventListener ('click', function(){
+	if (clock === undefined){
+		clock= setInterval(goBack, 1000);
+		console.log(clock)
+	}
+} )
+
+
+
+
+btnReset.addEventListener ('click', function(){
+	clearInterval(clock);
+	clock= undefined
+	reset()
+
+} )
+
+
+function reset(){
+		slideElements[indiceSlideAttiva].classList.remove('active')
+		
+		indiceSlideAttiva = 0
+		
+		slideElements[indiceSlideAttiva].classList.add('active')
+}
