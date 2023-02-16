@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Steam</title>
+    <link rel="icon" type="image/x-icon" href="./img/steam-symbol.svg">
     <script src="https://kit.fontawesome.com/c5d4023dee.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -13,9 +14,11 @@
 </head>
 
 <body>
-
-    <section class="py-5">
-        <h1 class="text-center">Carousel</h1>
+    <section class="py-5 ">
+        <h1 class="text-center text-primary m-2">
+            <i class="fa-brands fa-steam"></i>
+            Il nostro catalogo
+        </h1>
         <div class="container">
             <!-- struttura html del carosello -->
             <div class="carosello" id="">
@@ -26,14 +29,19 @@
                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
+            <div class="row ">
+                <div class="col d-flex justify-content-center m-4 gap-5">
+                    <button type="button"  class="btn btn-primary  rounded-circle btStart btn-lg"><i class="fa-solid fa-play"></i></button>
+                    <button type="button" class="btn btn-warning rounded-circle btStop btn-lg"><i class="fa-solid fa-pause"></i></button>
+                    <button type="button" class="btn btn-success rounded-circle btRewind btn-lg"><i class="fa-solid fa-backward"></i></button>
+                    <button type="button" class="btn btn-danger  rounded-circle btReset btn-lg"><i class="fa-solid fa-rotate-left"></i></button>
+                </div>
+            </div>
         </div>
     </section>
-    <button type="button"  class="btn btn-primary btStart">start</button>
-    <button type="button" class="btn btn-danger btStop">stop</button>
-    <button type="button" class="btn btn-warning btRewind">rewind</button>
-    <button type="button" class="btn btn-warning btReset">reset</button>
+    
     <script src="./js/carousel.js"></script>
 </body>
 </html>
 
-
+<p class="sale"></p>

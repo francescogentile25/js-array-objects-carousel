@@ -37,7 +37,20 @@
 	color: white;
 }
 .info{
-	top: 50%;
+	bottom: 0;
 	left: 50%;
 	transform: translate(-50% ,-50%  );
+	background-color: black ;
+	opacity: 0.7;
+	border-radius: 20px;
+}
+
+.sale{
+	color: red;
+	font-size: 30px;
+	left: 40px;
+	top: 20px;
+	background-color: blue;
+	border-radius: 999px;
+	
 }
